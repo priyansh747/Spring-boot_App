@@ -20,11 +20,13 @@ pipeline{
         stage('Publish JUnit'){
             steps{
                 echo "Publishing JUnit"
+                junit 'spring-boot-samples/spring-boot-sample-atmosphere/target/surefire-reports/*.xml'
             }
         }
         stage('Publish HTML'){
             steps{
                 echo "Publishing HTML"
+                publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'spring-boot-samples/spring-boot-sample-atmosphere/target/site/jacoco/', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
             }
         }
     }
