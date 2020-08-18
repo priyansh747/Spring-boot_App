@@ -4,7 +4,7 @@ pipeline{
         stage('Build'){
             steps{
                 echo "Building Project"
-                powershell label: '', script: 'mvn clean package -f spring-boot-samples/spring-boot-atmosphere/pom.xml'
+                powershell label: '', script: 'mvn clean package -f spring-boot-samples/spring-boot-sample-atmosphere/pom.xml'
             }
         }
         stage('Archive'){
