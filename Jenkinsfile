@@ -4,6 +4,7 @@ pipeline{
         stage('Build'){
             tools{
                 jdk 'jdk8'
+                maven 'Maven'
             }
             steps{
                 echo "Building Project"
