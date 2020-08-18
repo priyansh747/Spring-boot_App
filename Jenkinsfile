@@ -2,6 +2,9 @@ pipeline{
     agent any
     stages{
         stage('Build'){
+            tools{
+                jdk 'jdk8'
+            }
             steps{
                 echo "Building Project"
                 powershell label: '', script: 'mvn clean package -f spring-boot-samples/spring-boot-sample-atmosphere/pom.xml'
