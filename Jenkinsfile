@@ -4,11 +4,13 @@ pipeline{
         stage('Build'){
             steps{
                 echo "Building Project"
+                powershell label: '', script: 'mvn clean package -f spring-boot-samples\\spring-boot-atmosphere\\pom.xml'
             }
         }
         stage('Archive'){
             steps{
                 echo "Archived Project"
+                archiveArtifacts artifacts: 'spring-boot-samples/spring-boot-sample-atmosphere/targets/*.jar', followSymlinks: false
             }
         }
         stage('Publish JUnit'){
