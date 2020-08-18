@@ -13,7 +13,7 @@ pipeline{
         stage('Archive'){
             steps{
                 echo "Archived Project"
-                archiveArtifacts artifacts: 'spring-boot-samples/spring-boot-sample-atmosphere/targets/*.jar', followSymlinks: false
+                archiveArtifacts artifacts: 'spring-boot-samples/spring-boot-sample-atmosphere/target/*.jar', followSymlinks: false
             }
         }
         stage('Publish JUnit'){
